@@ -1,0 +1,53 @@
+.carousel {
+  margin-left: 2%;
+  height: 280px;
+  width: 96%;
+  /* position: relative; */
+}
+
+.carouselbox {
+  margin: 0 auto;
+  height: 300px;
+  width: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 0px !important;
+  display: flex;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070707;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.carouselbox img {
+  min-width: 195px;
+  max-width: 195px;
+  height: 264px;
+  background-size: cover;
+  background-color: lightblue;
+  margin: 5px 10px 0px 0px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+.carouselbox img:hover {
+  transform: scale(1.4);
+  z-index: 5;
+}
