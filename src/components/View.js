@@ -20,12 +20,13 @@ const View = () => {
         axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=23b7a354034b17a5d10d57b2969dd271&language=en-US`)
             .then(res => res.data)
             .then(searchData => setSingleSearch(searchData))
-        // .then(() => axios.get(`/api/users/${user.id}/favorites/${id}`))
-        // .then(res => res.data)
-        // .then(favorite => {
-        //     setAreadyAdded(favorite ? false : true)
-        // })
-    })
+            .then(() => axios.get(`/api/users/${user.id}/favorites/${id}`))
+            .then(res => res.data)
+            .then(favorite => {
+                setAreadyAdded(favorite ? false : true)
+            })
+    },[])
+
 
     if (type === 'movie' && singleSearch.id) return (
         <div className='view-container'>
@@ -41,7 +42,7 @@ const View = () => {
                     <div className='view-content'>Descripción: </div>
                     <div>{singleSearch.overview}</div>
                     {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Agregar a favoritos</button>}
-                    <Link to='/search'>
+                    <Link to='/home'>
                         <button className='view-button'>Volver a la busqueda</button>
                     </Link>
                 </div>
@@ -64,7 +65,7 @@ const View = () => {
                     {singleSearch.homepage && <div className='view-content'>Mirala en: {singleSearch.homepage}</div>}
                     <div className='view-content'>Descripción: {singleSearch.overview}</div>
                     {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Agregar a favoritos</button>}
-                    <Link to='/search'>
+                    <Link to='/home'>
                         <button className='view-button'>Volver a la busqueda</button>
                     </Link>
                 </div>

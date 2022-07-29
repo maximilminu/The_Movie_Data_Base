@@ -12,7 +12,7 @@ const Slider = ({ movies }) => {
                     const type = movie.title ? 'movie' : 'tv'
                     return (
                         <Link className='card-value' to={`/single/${type}/${movie.id}`} key={index}>
-                            <img src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`} />
+                            <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} />
                         </Link>)
                 })}
             </div>

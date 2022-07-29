@@ -11,7 +11,6 @@ import Login from './components/Login'
 import Search from './components/Search'
 import View from './components/View'
 import Favorites from './components/Favorites';
-import Footer from './components/Footer'
 import Home from './components/Home';
 import MoviesContextProvider from './contexts/moviesContext';
 
@@ -47,7 +46,6 @@ const App = () => {
       <Route path='/users/:id/favorites' element={<Favorites />} />
     </Routes>
     
-    <Footer className='bottom'/>
     </AuthContextProvider>
     </SearchContextProvider>
     </FavoriteContextProvider>

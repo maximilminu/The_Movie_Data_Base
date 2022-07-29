@@ -62,8 +62,14 @@ router.get('/users/:user_id/favorites', (req,res)=>{
     res.send(user.favorites)})
 })
 
+// router.delete("/deletefavs", (req,res,next) => {
+//   Favorite.destroy({where: req.body})
+//  .then(data => res.status(200).send(data.data))
+//  .catch(next)
+// }) 
+
 // DELETE 1 FAVORITE
-router.delete('/users/:user_id/favorites/:id',(req,res)=>{
+router.delete('/users/:user_id/delFavorite/:id',(req,res)=>{
   Favorite.destroy({where:{id:req.params.id},include:[{model:User, attributes:{id:req.params.user_id}}]})
   .then(() => res.sendStatus(200))
 })

@@ -23,12 +23,12 @@ export const FavoriteContextProvider= ({children}) => {
         axios.post(`/api/users/${userId}/favorites/add`, {singleSearch,type})
         .then(()=> {
             getFavorites(userId)
-            navigate(`/users/${userId}/favorites`)
+            navigate(`/home`)
         })    
     }
 
     const removeFromFavorite = (singleSearchId,userId) => {
-        axios.delete(`/api/users/${userId}/favorites/${singleSearchId}`)
+        axios.delete(`/api/users/${userId}/delFavorite/${singleSearchId}`)
         .then(()=> getFavorites(userId))
     }
 

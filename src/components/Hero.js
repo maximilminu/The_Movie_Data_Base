@@ -44,8 +44,6 @@ const Hero = () => {
     return () => clearInterval(slideInterval);
   }, [currentSlide]);
 
-  console.log(trendingMovies)
-
   return (
     <div className="hero">
       <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide} />
