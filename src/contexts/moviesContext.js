@@ -24,7 +24,7 @@ const MoviesContextProvider = ({ children }) => {
                 .then(res => res.data.results)
         },
         blockbusterMovies: () => {
-            return axios.get(`${tmdbapi}discover/movie?api_key=${apikey}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&primary_release_year=${year - 5}`)
+            return axios.get(`${tmdbapi}trending/all/week?api_key=${apikey}&language=en-US&certification_country=US`)
                 .then(res => res.data.results)
         }
 

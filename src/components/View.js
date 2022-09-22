@@ -25,26 +25,32 @@ const View = () => {
             .then(favorite => {
                 setAreadyAdded(favorite ? false : true)
             })
-    },[])
+    }, [])
 
 
     if (type === 'movie' && singleSearch.id) return (
-        <div className='view-container'>
+        <div className='view-container' >
+            <img src={`https://image.tmdb.org/t/p/w1280/${singleSearch.backdrop_path}`} id="backdrop" />
             <div className='view-subcontainer'>
                 <img src={`https://image.tmdb.org/t/p/w300/${singleSearch.poster_path}`} />
                 <div className='view-contents'>
-                    <div className='view-content'># {singleSearch.id}</div>
                     <h1 className='view-content'>{singleSearch.title}</h1>
-                    <div className='view-content'><FaStar /> {singleSearch.vote_average}</div>
-                    <div className='view-content'>Fecha de estreno: {singleSearch.release_date}</div>
-                    <div className='view-content'>Producción: {singleSearch.production_companies[0].name}</div>
-                    {singleSearch.homepage && <div className='view-content'>Mirala en: {singleSearch.homepage}</div>}
-                    <div className='view-content'>Descripción: </div>
-                    <div>{singleSearch.overview}</div>
-                    {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Agregar a favoritos</button>}
-                    <Link to='/home'>
-                        <button className='view-button'>Volver a la busqueda</button>
-                    </Link>
+                    <br />
+                    <div className='view-content'> {Math.round(singleSearch.vote_average * 10) / 10} <FaStar /></div>
+                    <br />
+                    <div className='view-content'>Genre: <p>{singleSearch.genres[0].name}</p></div>
+                    <div className='view-content'>Release Date: <p>{singleSearch.release_date}</p></div>
+                    <div className='view-content'>Production: <p>{singleSearch.production_companies[0].name}</p></div>
+                    <br />
+                    <div className='view-content' id='overview'>
+                        <p >{singleSearch.overview}</p>
+                    </div>
+                    <div className='button-container'>
+                        {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Add to Favorites</button>}
+                        <Link to='/home'>
+                            <button className='view-button'>Back to Home</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,19 +61,23 @@ const View = () => {
             <div className='view-subcontainer'>
                 <img src={`https://image.tmdb.org/t/p/w300/${singleSearch.poster_path}`} />
                 <div className='view-contents'>
-                    <div className='view-content'># {singleSearch.id}</div>
                     <h1 className='view-content'>{singleSearch.name}</h1>
-                    <div className='view-content'><FaStar /> {singleSearch.vote_average}</div>
-                    <div className='view-content'>Fecha de inicio: {singleSearch.first_air_date}</div>
-                    <div className='view-content'>Fecha de finalizacion: {singleSearch.last_air_date}</div>
-                    <div className='view-content'>Numero de temporadas: {singleSearch.number_of_seasons}</div>
-                    <div className='view-content'>Producción: {singleSearch.production_companies[0].name}</div>
-                    {singleSearch.homepage && <div className='view-content'>Mirala en: {singleSearch.homepage}</div>}
-                    <div className='view-content'>Descripción: {singleSearch.overview}</div>
-                    {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Agregar a favoritos</button>}
-                    <Link to='/home'>
-                        <button className='view-button'>Volver a la busqueda</button>
-                    </Link>
+                    <br />
+                    <div className='view-content'> {Math.round(singleSearch.vote_average * 10) / 10} <FaStar /></div>
+                    <br />
+                    <div className='view-content'>Release Date: <p>{singleSearch.first_air_date}</p></div>
+                    <div className='view-content'>Number of Seassons: <p>{singleSearch.number_of_seasons}</p></div>
+                    <div className='view-content'>Production: <p>{singleSearch.production_companies[0].name}</p></div>
+                    <br />
+                    <div className='view-content' id='overview'>
+                        <p>{singleSearch.overview}</p>
+                    </div>
+                    <div className='button-container'>
+                        {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Add to Favorites</button>}
+                        <Link to='/home'>
+                            <button className='view-button'>Back to Home</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

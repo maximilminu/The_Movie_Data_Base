@@ -14,7 +14,7 @@ const Search = () => {
 
   const getData = (query)=>{
     if(typeSearch !=='user') {
-      return axios.get(`https://api.themoviedb.org/3/search/${typeSearch}?api_key=f1a9053523aef8cf0734bcc18bd6c874&language=en-US&query=${query}&page=1&include_adult=false`)
+      return axios.get(`${tmdbapi}search/${typeSearch}?api_key=${apikey}&language=en-US&query=${query}&page=1&include_adult=false`)
     } else {
       return axios.get(`/api/users/search/${query.toLowerCase()}`)
     }
@@ -42,10 +42,6 @@ const Search = () => {
             setSearchResults([])
             setTypeSearch('tv')
             }}>Series</button>
-          <button className='search-button' onClick={()=>{
-            setSearchResults([])
-            setTypeSearch('user')
-            }}>Usuarios</button>
         </div>
       </div>
       <div className='search-title'>Buscando {searching}</div>

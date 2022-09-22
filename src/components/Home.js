@@ -28,12 +28,12 @@ const Home = () => {
     <div>
       <Hero />
       <div>
-        <h2 className='discoverMovies'>Las peliculas más taquilleras</h2>
+        <h2 className='discoverMovies'>Trending This Week</h2>
         <Slider movies={blockbuster_Movies} />
-        <h2 className='discoverMovies'>Las peliculas más populares</h2>
+        <h2 className='discoverMovies'>Popular Movies</h2>
         <Slider movies={popular_Movies} />
         <div id='topRated'>
-          <h2 className='discoverMovies'>Las peliculas mejor valoradas</h2>
+          <h2 className='discoverMovies'>Top Rated Movies</h2>
           <Slider movies={top_Rated_Movies} />
         </div>
       </div>

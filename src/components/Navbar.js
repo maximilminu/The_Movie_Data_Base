@@ -38,15 +38,14 @@ const Navbar = () => {
         </Link>
         <nav>
           <ul className='nav__links'>
-            <li>Bienvenido {user.username.slice(0, 1).toUpperCase()}{user.username.slice(1)}</li>
-            <li>Maxi Movie Data Base</li>
+            <li>Welcome {user.username.slice(0, 1).toUpperCase()}{user.username.slice(1)}</li>
           </ul>
         </nav>
         <Link to={`/users/${user.id}/favorites`}>
-          <button className='cta'>Ver Favoritos</button>
+          <button className='cta'>Favorites</button>
         </Link>
         <Link to="/search">
-          <button className='cta'>Buscar</button>
+          <button className='cta'>Search</button>
         </Link>
         <Link to="/login">
           <button className='cta' onClick={handleLogOut}>Log out</button>
