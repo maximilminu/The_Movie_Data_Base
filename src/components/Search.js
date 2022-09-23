@@ -10,7 +10,10 @@ const Search = () => {
   const apikey = "23b7a354034b17a5d10d57b2969dd271"
   const searchQuery = useInput()
   const { searchResults, setSearchResults, typeSearch, setTypeSearch } = useContext(SearchContext)
-  const searching = typeSearch === 'movie' ? 'Peliculas' : typeSearch === 'tv' ? 'Series' : 'Usuarios'
+  
+  console.log("TYPE",typeSearch)
+
+  const searching = typeSearch === 'movie' ? 'Movies' : typeSearch === 'tv' ? 'Series' : 'Usuarios'
 
   const getData = (query)=>{
     if(typeSearch !=='user') {
@@ -32,30 +35,30 @@ const Search = () => {
   return (
     <div>
       <div>
-        <h2 className='search-title'>¿Que Estas buscando?</h2>
+        <h2 className='search-title'>What are you looking for?</h2>
         <div className='search-buttons'>
           <button className='search-button' onClick={()=>{
             setSearchResults([])
             setTypeSearch('movie')
-            }}>Peliculas</button>
+            }}>Movies</button>
           <button className='search-button' onClick={()=>{
             setSearchResults([])
             setTypeSearch('tv')
             }}>Series</button>
         </div>
       </div>
-      <div className='search-title'>Buscando {searching}</div>
+      <div className='search-title'>Looking for {searching}</div>
       <form className='search-form' onSubmit={(e) => e.preventDefault()}>
         <input
         className='search-input'
         type="text"
-        placeholder={`ingresa nombre de ${searching.slice(0,searching.length-1).toLowerCase()}`}
+        placeholder={`  Search for ${searching.toLowerCase()}`}
         onChange={searchQuery.onChange}
         value={searchQuery.value}
         />
       </form>
       
-      {searchResults[0] && <p className='search-results'>Resultados de la busqueda</p>}
+      {searchResults[0] && <p className='search-results'>Your results...</p>}
       {searchResults[0] && <Grid searchList={searchResults} remove={false} isUser={typeSearch === 'user' ? true :false}/>}
         </div>
   )

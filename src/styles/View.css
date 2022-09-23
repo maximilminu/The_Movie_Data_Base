@@ -23,8 +23,6 @@
   position: fixed;
   right: 0;
   top: 0;
-  /* -o-object-fit: contain;
-  object-fit: contain; */
 }
 
 .view-subcontainer {
@@ -33,10 +31,7 @@
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.521);
   border-radius: 20px;
-
 }
-
-
 
 .view-subcontainer img {
   max-width: 300px;

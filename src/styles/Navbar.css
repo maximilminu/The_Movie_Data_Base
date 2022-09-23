@@ -14,13 +14,14 @@ h3 {
   font-size: 16px;
   color: #edf0f1;
   text-decoration: none;
+  list-style-type: none
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 10px 10%;
   border-style: groove;
   border-color: #edf0f1;
   border-width: 0px 0px 1px 0px;
@@ -28,25 +29,34 @@ header {
 
 .logo {
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 70px;
 }
 
-.nav__links {
+.welcome {
+  display: flex;
+  align-items: center;
+}
+
+header h2 {
   list-style: none;
-  color: #edf0f1;
   font-family: monospace;
+  color: #edf0f1;
+  font-size: 15px;
+}
+
+header h2:hover {
+  color: rgba(0, 180, 224, 0.8);
+  transition: 0.4s ease-in-out
+}
+
+.header-buttons {
+  display: inline-flex;
 }
 
 .nav__links li {
-  display: inline-block;
-  padding: 0px 20px;
-  font-weight: bold;
-}
 
-.nav__links li:hover {
-  transition: all 0.3s ease 0s;
-  color: #02aad4;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 #loginHeader {

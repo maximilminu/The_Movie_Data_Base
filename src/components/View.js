@@ -58,6 +58,7 @@ const View = () => {
 
     if (singleSearch.id) return (
         <div className='view-container'>
+                        <img src={`https://image.tmdb.org/t/p/w1280/${singleSearch.backdrop_path}`} id="backdrop" />
             <div className='view-subcontainer'>
                 <img src={`https://image.tmdb.org/t/p/w300/${singleSearch.poster_path}`} />
                 <div className='view-contents'>

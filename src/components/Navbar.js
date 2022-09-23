@@ -33,22 +33,26 @@ const Navbar = () => {
   if (isAuthenticated)
     return (
       <header>
-        <Link to="/home">
-          <img className='logo' src={process.env.PUBLIC_URL + "/pikachu.png"} alt='logo' />
-        </Link>
-        <nav>
-          <ul className='nav__links'>
-            <li>Welcome {user.username.slice(0, 1).toUpperCase()}{user.username.slice(1)}</li>
-          </ul>
-        </nav>
+        <div className='welcome'>
+          <Link to="/home">
+            <img className='logo' src={process.env.PUBLIC_URL + "/pikachu.png"} alt='logo' />
+          </Link>
+          <nav>
+            <ul className='nav__links'>
+              <Link to="/home">
+                <li>Welcome {user.username.slice(0, 1).toUpperCase()}{user.username.slice(1)}</li>
+              </Link>
+            </ul>
+          </nav>
+        </div>
         <Link to={`/users/${user.id}/favorites`}>
-          <button className='cta'>Favorites</button>
+          <h2>Favorites</h2>
         </Link>
         <Link to="/search">
-          <button className='cta'>Search</button>
+          <h2>Search</h2>
         </Link>
         <Link to="/login">
-          <button className='cta' onClick={handleLogOut}>Log out</button>
+          <h2 className='logout-button' onClick={handleLogOut}>Log out</h2>
         </Link>
       </header>
     );
