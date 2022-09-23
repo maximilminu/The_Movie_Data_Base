@@ -34,7 +34,15 @@
 
 .card-value {
   color: rgb(234, 240, 231);
-  font-family: system-ui;
+  font-family: monospace;
+  font-size: 15pxpx;
+}
+
+.card-value img {
+  min-width: 130px;
+  max-width: 130px;
+  min-height: 195px;
+  max-height: 195px;
 }
 
 .card-button {

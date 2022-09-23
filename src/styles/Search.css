@@ -1,9 +1,16 @@
+* {
+  font-family: monospace;
+}
+
 .search-title {
   display: flex;
   justify-content: center;
   font-size: medium;
   color: rgb(234, 240, 231);
   margin: 15px 0px;
+  white-space: pre;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .search-buttons {
@@ -18,11 +25,13 @@
   color: white;
   cursor: pointer;
   font-family: system-ui;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 20px;
   text-align: center;
   padding: 3px 7px;
   margin: 0px 5px 10px 5px;
+  font-family: monospace;
+
 }
 
 .search-form {
@@ -31,18 +40,18 @@
 }
 
 .search-input {
-  font-family: system-ui;
+  font-family: monospace;
   border-color: rgba(39, 39, 39, 0.481);
   border-radius: 3px;
   border: none;
-  background-color: rgb(93, 126, 219);
+  background-color: rgba(0, 136, 169, 1);
   margin-left: 8px;
-  font-size: medium;
+  font-size: bold;
   height: 25px;
 }
 
 .search-input::placeholder {
-  color: white;
+  color: rgb(228, 228, 228);
   white-space: pre;
   align-items: center;
 }

@@ -47,12 +47,12 @@ const Search = () => {
             }}>Series</button>
         </div>
       </div>
-      <div className='search-title'>Looking for {searching}</div>
+      <div className='search-title'> Looking for {searching}</div>
       <form className='search-form' onSubmit={(e) => e.preventDefault()}>
         <input
         className='search-input'
         type="text"
-        placeholder={`  Search for ${searching.toLowerCase()}`}
+        placeholder={` Search for ${searching.slice(0,searching.length-1).toLowerCase()}`}
         onChange={searchQuery.onChange}
         value={searchQuery.value}
         />
