@@ -20,7 +20,6 @@ const Favorites = () => {
             .then(() => console.log(res))
     }, [])
 
-
     useEffect(() => {
         axios.get(`/api/users/${id}`)
             .then(res => res.data)
