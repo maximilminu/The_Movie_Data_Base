@@ -23,11 +23,12 @@ const Hero = () => {
     setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
   };
 
+  //Autorinterval
   function auto() {
     slideInterval = setInterval(nextSlide, intervalTime);
   }
 
-
+  //Render every time the Hero change img
   useEffect(() => {
     axios.get(`${tmdbapi}trending/all/day?api_key=${apikey}&language=en-US`)
       .then((res) => res.data.results)
