@@ -7,26 +7,25 @@ import Grid from '../commons/Grid'
 
 import { FavoriteContext } from "../contexts/favoriteContext"
 
+const Favorites = () => {
+    const { favorites, getFavorites } = useContext(FavoriteContext)
+    const { id } = useParams()
+    const [actualUser, setActualUser] = useState({})
+    const [actualFavorites, setActualFavorites] = useState([])
 
-const Favorites = ()=>{
-    const {favorites,getFavorites} = useContext(FavoriteContext)
-    const {id} = useParams()
-    const [actualUser,setActualUser] = useState({})
-    const [actualFavorites,setActualFavorites] = useState([])
-
-
+    // Tenemos que modificar este codigo para los favs
     //trabajar con el pedido de Favorites para renderisar en la pantalla cada uno, seria refactorizar lo de la linea 30 en adelante
     useEffect(() => {
         getFavorites(id)
-        .then(() => console.log(res))
-    },[])
+            .then(() => console.log(res))
+    }, [])
 
 
     useEffect(() => {
         axios.get(`/api/users/${id}`)
-        .then(res=>res.data)
-        .then(returnedUser => setActualUser(returnedUser))
-        
+            .then(res => res.data)
+            .then(returnedUser => setActualUser(returnedUser))
+
         // const fav=[]
         // const promises = []
         // Promise.resolve(getFavorites(id))        
@@ -42,17 +41,16 @@ const Favorites = ()=>{
         //     })
         // Promise.all(promises).then(() => setActualFavorites(fav))
         // })
-    },[])
-    
+    }, [])
 
-    if(favorites.length === actualFavorites.length) return (
+    if (favorites.length === actualFavorites.length) return (
         <div className='favorites-container'>
-        <h1 className='favorites-title'>Favoritos de {actualUser.username}</h1>
-        <Link to='/search' >
-            <button className="favorites-button">Volver a la busqueda</button>
-        </Link>
-        
-        {actualFavorites.length ? <Grid searchList={actualFavorites} isFavorite={true} /> : <p>No hay favoritos...</p>}
+            <h1 className='favorites-title'>Favoritos de {actualUser.username}</h1>
+            <Link to='/search' >
+                <button className="favorites-button">Volver a la busqueda</button>
+            </Link>
+
+            {actualFavorites.length ? <Grid searchList={actualFavorites} isFavorite={true} /> : <p>No hay favoritos...</p>}
         </div>
     )
 
