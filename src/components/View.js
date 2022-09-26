@@ -27,6 +27,7 @@ const View = () => {
             })
     }, [])
 
+    //Se deberia refactorizar, son codigos muuy similares
 
     if (type === 'movie' && singleSearch.id) return (
         <div className='view-container' >
