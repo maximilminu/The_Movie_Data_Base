@@ -15,41 +15,42 @@ const Favorites = () => {
 
     // Tenemos que modificar este codigo para los favs
     //trabajar con el pedido de Favorites para renderisar en la pantalla cada uno, seria refactorizar lo de la linea 30 en adelante
-    useEffect(() => {
-        getFavorites(id)
-            .then(() => console.log(res))
-    }, [])
+    // useEffect(() => {
+    //     console.log("ACAAAAAAAAA",getFavorites(id))
+    // }, [])
 
     useEffect(() => {
         axios.get(`/api/users/${id}`)
             .then(res => res.data)
             .then(returnedUser => setActualUser(returnedUser))
 
-        // const fav=[]
-        // const promises = []
-        // Promise.resolve(getFavorites(id))        
-        // .then(()=>{
-        //     favorites.forEach(favorite => {
-        //         promises.push(
-        //             axios.get(`https://api.themoviedb.org/3/${favorite.type}/${favorite.title_id}?api_key=23b7a354034b17a5d10d57b2969dd271&language=en-US`)
-        //             .then(res=>res.data)
-        //             .then(movie => {
-        //                 fav.push(movie)
-        //             })
-        //         )
-        //     })
-        // Promise.all(promises).then(() => setActualFavorites(fav))
-        // })
+        const fav=[]
+        const promises = []
+        Promise.resolve(getFavorites(id))        
+        .then(()=>{
+            favorites.forEach(favorite => {
+                promises.push(
+                    axios.get(`https://api.themoviedb.org/3/${favorite.type}/${favorite.title_id}?api_key=23b7a354034b17a5d10d57b2969dd271&language=en-US`)
+                    .then(res=>res.data)
+                    .then(movie => {
+                        fav.push(movie)
+                    })
+                )
+            })
+        Promise.all(promises).then(() => setActualFavorites(fav))
+        })
     }, [])
+
+    console.log("Favorites",actualFavorites)
 
     if (favorites.length === actualFavorites.length) return (
         <div className='favorites-container'>
-            <h1 className='favorites-title'>Favoritos de {actualUser.username}</h1>
+            <h1 className='favorites-title'>{(actualUser.username)[0].toUpperCase() + (actualUser.username).slice(1)}'s Favorites</h1>
             <Link to='/search' >
-                <button className="favorites-button">Volver a la busqueda</button>
+                <button className="favorites-button">Search other</button>
             </Link>
 
-            {actualFavorites.length ? <Grid searchList={actualFavorites} isFavorite={true} /> : <p>No hay favoritos...</p>}
+            {actualFavorites.length ? <Grid searchList={actualFavorites} isFavorite={true} /> : <p>There is no favorites...</p>}
         </div>
     )
 
