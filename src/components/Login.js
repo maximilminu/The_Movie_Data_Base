@@ -55,7 +55,7 @@ const Login = () => {
                 </form>
             </div>
             <div className='login-label'>
-                <p>¿Todavia no tenes usuario? Haz <Link className='link' to='/register'>Click aqui</Link> para registrarte</p>
+                <p>If you don't have a user yet, <Link className='link' to='/register'>Click Here</Link> to register</p>
             </div>
         </div>
     )
