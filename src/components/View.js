@@ -47,7 +47,7 @@ const View = () => {
                         <p >{singleSearch.overview}</p>
                     </div>
                     <div className='button-container'>
-                        {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Add to Favorites</button>}
+                        {/* {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Add to Favorites</button>} */}
                         <Link to='/home'>
                             <button className='view-button'>Back to Home</button>
                         </Link>
@@ -75,7 +75,7 @@ const View = () => {
                         <p>{singleSearch.overview}</p>
                     </div>
                     <div className='button-container'>
-                        {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Add to Favorites</button>}
+                        {/* {alreadyAdded && <button className='view-button' onClick={() => addToFavorite(singleSearch, user.id, typeSearch)}>Add to Favorites</button>} */}
                         <Link to='/home'>
                             <button className='view-button'>Back to Home</button>
                         </Link>

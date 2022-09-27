@@ -24,8 +24,8 @@ const Search = () => {
   }
 
   useEffect(()=>{
-    if(searchQuery.value.length <=2) setSearchResults([])
-    if (searchQuery.value.length > 2) getData(searchQuery.value)
+    if(searchQuery.value.length <=1) setSearchResults([])
+    if (searchQuery.value.length > 1) getData(searchQuery.value)
     .then(res => res.data)
     .then(data => {
       if(typeSearch !== 'user') setSearchResults(data.results)

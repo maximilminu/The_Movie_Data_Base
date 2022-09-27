@@ -45,9 +45,9 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <Link to={`/users/${user.id}/favorites`}>
+        {/* <Link to={`/users/${user.id}/favorites`}>
           <h2>Favorites</h2>
-        </Link>
+        </Link> */}
         <Link to="/search">
           <h2>Search</h2>
         </Link>

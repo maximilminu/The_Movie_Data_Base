@@ -41,7 +41,6 @@ const Favorites = () => {
         })
     }, [])
 
-    console.log("Favorites",actualFavorites)
 
     if (favorites.length === actualFavorites.length) return (
         <div className='favorites-container'>
