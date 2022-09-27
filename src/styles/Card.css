@@ -35,7 +35,8 @@
 .card-value {
   color: rgb(234, 240, 231);
   font-family: monospace;
-  font-size: 15pxpx;
+  font-size: 15px;
+  text-align: center;
 }
 
 .card-value img {
