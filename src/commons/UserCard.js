@@ -10,6 +10,7 @@ const UserCard = ({singleResult})=>{
                 {`#${singleResult.id}: ${singleResult.username}`}
             </Link>
             <div className='card-filling' />
+            
         </div>
     )
 }
