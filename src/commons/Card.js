@@ -16,7 +16,6 @@ const Card = ({ singleResult, isFavorite }) => {
                 {singleResult.poster_path && <img src={`https://image.tmdb.org/t/p/w154/${singleResult.poster_path}`} />}
                 {type === 'movie' ? `${(singleResult.title.length > 14) ? singleResult.title.slice(0, 11) + "..." : singleResult.title}` : `${(singleResult.name.length > 20) ? singleResult.name.slice(0, 16) + "..." : singleResult.name}`}
             </Link>
-            
             {/* {isFavorite && <button className='card-button' onClick={() => removeFromFavorite(singleResult.id, user.id)}>Remove</button>} */}
         </div>
     )
