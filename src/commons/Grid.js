@@ -13,7 +13,6 @@ const Grid = ({searchList,isFavorite,isUser})=>{
             <Card singleResult={singleResult} isFavorite={isFavorite} key={singleResult.id}/>):
             null
         )}
-        
         </div>
     )
 }
