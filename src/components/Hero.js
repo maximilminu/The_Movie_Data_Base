@@ -14,6 +14,7 @@ const Hero = () => {
   const autoScroll = true;
   let slideInterval;
   let intervalTime = 8000;
+  
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
