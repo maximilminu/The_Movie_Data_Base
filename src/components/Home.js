@@ -10,7 +10,6 @@ const Home = () => {
   const [popular_Movies, set_Popular_Movies] = useState([])
   const [top_Rated_Movies, set_Top_Rated_Movies] = useState([])
   const [blockbuster_Movies, set_blockbuster_Movies] = useState([])
-  
 
   useEffect(() => {
     popularMovies().then((movies) => {
