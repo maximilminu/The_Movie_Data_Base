@@ -2,7 +2,6 @@ const Footer = () => {
     return (
         //Debemos incluir un footer
         <>
-        
         </>
     )
 }
