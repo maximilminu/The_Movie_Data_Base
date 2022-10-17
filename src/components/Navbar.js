@@ -8,6 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, toggleAuth } = useContext(AuthContext);
 
+  
   useEffect(() => {
     axios
       .get("/api/me")
