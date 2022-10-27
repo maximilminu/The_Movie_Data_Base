@@ -4,7 +4,6 @@ import "../styles/Hero.css";
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 
-
 const Hero = () => {
   const tmdbapi = "https://api.themoviedb.org/3/"
   const apikey = "23b7a354034b17a5d10d57b2969dd271"
