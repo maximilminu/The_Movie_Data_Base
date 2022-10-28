@@ -3,10 +3,9 @@ import { MoviesContext } from '../contexts/moviesContext'
 import Hero from './Hero'
 import Slider from "./Slider"
 
+
 const Home = () => {
-
   const { popularMovies, topRatedMovies, blockbusterMovies } = useContext(MoviesContext)
-
   const [popular_Movies, set_Popular_Movies] = useState([])
   const [top_Rated_Movies, set_Top_Rated_Movies] = useState([])
   const [blockbuster_Movies, set_blockbuster_Movies] = useState([])
