@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from 'react'
 import { SearchContext } from '../contexts/searchContext'
 import useInput from '../hooks/useInput'
 
-
 const Search = () => {
   const tmdbapi = "https://api.themoviedb.org/3/"
   const apikey = "23b7a354034b17a5d10d57b2969dd271"
