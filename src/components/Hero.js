@@ -22,7 +22,6 @@ const Hero = () => {
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
   };
-
   //Autorinterval
   function auto() {
     slideInterval = setInterval(nextSlide, intervalTime);
