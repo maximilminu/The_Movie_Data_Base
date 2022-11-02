@@ -5,7 +5,6 @@ import { useContext, useEffect } from 'react';
 import useInput from '../hooks/useInput'
 import { AuthContext } from '../contexts/authContext'
 
-
 const Login = () => {
     const navigate = useNavigate()
     const email = useInput()
